@@ -14,5 +14,3 @@
 #include <endpointvolume.h>
 
 #pragma comment(lib, "Winmm.lib")
-
-int random();

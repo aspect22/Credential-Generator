@@ -22,15 +22,3 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
-
-
-HCRYPTPROV prov;
-int random() {
-    if (prov == NULL)
-        if (!CryptAcquireContext(&prov, NULL, NULL, PROV_RSA_FULL, CRYPT_SILENT | CRYPT_VERIFYCONTEXT))
-            ExitProcess(1);
-
-    int out;
-    CryptGenRandom(prov, sizeof(out), (BYTE*)(&out));
-    return out & 0x7fffffff;
-}
